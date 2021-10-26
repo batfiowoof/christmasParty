@@ -1,0 +1,29 @@
+﻿@model IEnumerable<christmasParty.Models.Invitation>
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body style="background-color:lightcoral">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="col-3"> Име </th>
+                <th class="col-3"> Имейл </th>
+                <th class="col-3"> Телефон </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Mail</td>
+                <td>@item.phoneNumber</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <div class="text-right">
+        <a class="btn btn=primary w-25 m-2" style="font-size:16pt" asp-controller="Home" asp-action="Index"> Home Page </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿
+@model christmasParty.Models.Invitation;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - christmasParty </title>
+    <link rel="stylesheet" href="~lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body style="background-color:lightcoral">
+    <h2 style="text-align:center; margin-top:60px"> Формуляр за участие </h2>
+    <form method="post" asp-controller="Home" asp-action="RsvpForm" style="margin:80px;">
+
+        <div class="form-group">
+            <label asp-for="Name"> Вашето име </label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Mail"> Вашият имейл </label>
+            <input asp-for="Mail" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="phoneNumber"> Вашият телефонен номер </label>
+            <input asp-for="phoneNumber" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="isAttending"> Ще присъствате ли? </label>
+            <select asp-for="isAttending" class="form-control">
+                <option value=""> Изберете </option>
+                <option value="true"> Да, ще присъствам </option>
+                <option value="false"> Не, няма да присъствам </option>
+            </select>
+        </div>
+        <div class="col-6 text-right">
+            <button type="submit" class="col-3 btn btn-success m-1"> Попълване </button>
+        </div>
+        <div class="text-right">
+            <button class="btn btn=primary w-25 m-2" style="font-size:16pt" asp-controller="Home" asp-action="Index"> Home Page </button>
+        </div>
+    </form>
+</body>
+</html>
